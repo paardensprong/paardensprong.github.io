@@ -1,4 +1,1 @@
-
-function myFunction() {
-    document.getElementById("1").style.color = "red";
-  }
+<div onclick="this.style.backgroundColor='green'">a </div>
