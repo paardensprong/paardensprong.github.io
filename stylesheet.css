@@ -1,14 +1,4 @@
 #container{
-   padding-top: 10em;
-   display: grid;
-   grid-column-gap: 2px;
-   grid-row-gap: 0px;
-   grid-template-columns: auto auto auto;
-   justify-content: center;
-   align-items:center;
-}
-
-#checkContainer{
   padding-top: 10em;
   display: grid;
   grid-column-gap: 2px;
@@ -18,37 +8,44 @@
   align-items:center;
 }
 
+#checkContainer{
+ padding-top: 10em;
+ display: grid;
+ grid-column-gap: 2px;
+ grid-row-gap: 0px;
+ grid-template-columns: auto auto auto;
+ justify-content: center;
+ align-items:center;
+}
+
 img{
-  width: 140px;
-  height: 140px;
+ width: 140px;
+ height: 140px;
 }
 
 button{
-  font-family: 'Pacifico', cursive;
-  width: 150px;
-  height: 150px;
-  border: 3px;
-  font-size: 50px;
-  font-weight: bold;
-  color: #5B58F6;
-  background-color: #F658A4;
-  border-radius: 20%;
-  border-color: #5B58F6;
-  border-style:inset;
-  border-width: 4px;
-  color: 
+ font-family: 'Pacifico', cursive;
+ width: 150px;
+ height: 150px;
+ border: 3px;
+ font-size: 50px;
+ font-weight: bold;
+ color: #5B58F6;
+ background-color: #F658A4;
+ border-radius: 20%;
+ border-color: #5B58F6;
+ border-style:inset;
+ border-width: 4px;
+ color: 
 }
 
 #musicplayer{
-  padding-top: 10em;
-  display: grid;
-  justify-content: center;
-  align-items:center;
+ padding-top: 10em;
+ display: grid;
+ justify-content: center;
+ align-items:center;
 }
 
-.buttonCheck{
-
-}
 
 
 /* color wheel kleuren: rose: #F658A4 geel: #F2F658  groen:  #58F6AA  paars:  #5B58F6
