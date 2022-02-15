@@ -2,9 +2,11 @@
 let woordenlijst = [
     ["a", "p", "e", "n", "r", "o", "t", "s"],
     ["u", "i", "l", "e", "n", "v", "e", "l"],
-    ["m", "i", "n", "i", "c", "u", "b", "e"]
-
+    ["m", "i", "n", "i", "c", "u", "b", "e"],
+    ["v", "o", "o", "r", "j", "a", "a", "r"],
+    ["s", "i", "t", "u", "a", "t", "i", "e"]
 ];
+
 // loop om het volgede woord up te daten als het antwoord goed is.
 // for (let i = 0, i < 8; i++){
 //    console.log(woord[i]);
@@ -44,9 +46,11 @@ let btnc3 = document.querySelector('#c3');
 btna1.innerHTML = lettera1;
 btna2.innerHTML = lettera2;
 btna3.innerHTML = lettera3;
+
 btnb1.innerHTML = letterb1;
-//btnReset is de eenhoorn knop word reset knop//
+//b2= btnReset is de eenhoorn knop word reset knop//
 btnb3.innerHTML = letterb3;
+
 btnc1.innerHTML = letterc1;
 btnc2.innerHTML = letterc2;
 btnc3.innerHTML = letterc3;
@@ -57,56 +61,56 @@ btnc3.innerHTML = letterc3;
 
 //maak kopie knop om woord te checken. 
 btna1.addEventListener('click', () => {
-    btna1.style.backgroundColor = '#F2F658'; 
+    btna1.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${lettera1}</button>`;
 })
 
 btna2.addEventListener('click', () => {
-    btna2.style.backgroundColor = '#F2F658'; 
+    btna2.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${lettera2}</button>`;
 })
 
 btna3.addEventListener('click', () => {
-    btna3.style.backgroundColor = '#F2F658'; 
+    btna3.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${lettera3}</button>`;
 })
 
 btnb1.addEventListener('click', () => {
-    btnb1.style.backgroundColor = '#F2F658'; 
+    btnb1.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${letterb1}</button>`;
 })
 
 btnb3.addEventListener('click', () => {
-    btnb3.style.backgroundColor = '#F2F658'; 
+    btnb3.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${letterb3}</button>`;
 })
 
 btnc1.addEventListener('click', () => {
-    btnc1.style.backgroundColor = '#F2F658'; 
+    btnc1.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${letterc1}</button>`;
 })
 
 btnc2.addEventListener('click', () => {
-    btnc2.style.backgroundColor = '#F2F658'; 
+    btnc2.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${letterc2}</button>`;
 })
 
 btnc3.addEventListener('click', () => {
-    btnc3.style.backgroundColor = '#F2F658'; 
+    btnc3.style.backgroundColor = '#F987BE'; 
     checkContainer.innerHTML = `<button>${letterc3}</button>`;
 })
 
 
 
-btna2.addEventListener('click', () => btna2.style.backgroundColor = '#F2F658')
-btna3.addEventListener('click', () => btna3.style.backgroundColor = '#F2F658')
+btna2.addEventListener('click', () => btna2.style.backgroundColor = '#F987BE')
+btna3.addEventListener('click', () => btna3.style.backgroundColor = '#F987BE')
 
-btnb1.addEventListener('click', () => btnb1.style.backgroundColor = '#F2F658')
-btnb3.addEventListener('click', () => btnb3.style.backgroundColor = '#F2F658')
+btnb1.addEventListener('click', () => btnb1.style.backgroundColor = '#F987BE')
+btnb3.addEventListener('click', () => btnb3.style.backgroundColor = '#F987BE')
 
-btnc1.addEventListener('click', () => btnc1.style.backgroundColor = '#F2F658')
-btnc2.addEventListener('click', () => btnc2.style.backgroundColor = '#F2F658')
-btnc3.addEventListener('click', () => btnc3.style.backgroundColor = '#F2F658')
+btnc1.addEventListener('click', () => btnc1.style.backgroundColor = '#F987BE')
+btnc2.addEventListener('click', () => btnc2.style.backgroundColor = '#F987BE')
+btnc3.addEventListener('click', () => btnc3.style.backgroundColor = '#F987BE')
 
 //reset knop voor kleur. En dan nog reset voor buttons toevoegen.
 btnReset.addEventListener('click', () => {
