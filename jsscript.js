@@ -1,1 +1,0 @@
-<div onclick="this.style.backgroundColor='green'">a </div>
