@@ -39,13 +39,5 @@ button{
  color: 
 }
 
-#musicplayer{
- padding-top: 10em;
- display: grid;
- justify-content: center;
- align-items:center;
-}
-
-
 
 /* color wheel kleuren: rose: #F658A4 geel: #F2F658  groen:  #58F6AA  paars:  #5B58F6
