@@ -8,7 +8,7 @@ let woordenlijst = [
 ];
 
 //verklaar variabel als array, woord. (Per letter)
-let woord = woordenlijst[1];
+let woord = woordenlijst[0];
 
 //verklaar de buttons als variablen. 
 let btna1 = document.querySelector('#a1');
@@ -21,42 +21,53 @@ let btnc1 = document.querySelector('#c1');
 let btnc2 = document.querySelector('#c2');
 let btnc3 = document.querySelector('#c3');
 
-//Pak de letter uit de woordenlijst. Combinatie op basis van start op a1. 
-//a1, c2,a3,b1,c3,a2,c1,b3
-let lettera1 = woord[0];
-let lettera2 = woord[5];
-let lettera3 = woord[2];
-let letterb1 = woord[3];
-let letterb3 = woord[7];
-let letterc1 = woord[6];
-let letterc2 = woord[1];
-let letterc3 = woord[4];
-
-//Doe de letters in de container buttons: 
+//Pak de letter uit de woordenlijst, en doe ze in de container buttons. Combinatie op basis van start op a1. 
+//Combinatie op basis van start a1, c2,a3,b1,c3,a2,c1,b3
 btna1.innerHTML = woord[0];
-btna2.innerHTML = lettera2;
-btna3.innerHTML = lettera3;
-btnb1.innerHTML = letterb1;
-btnb3.innerHTML = letterb3;
-btnc1.innerHTML = letterc1;
-btnc2.innerHTML = letterc2;
-btnc3.innerHTML = letterc3;
+btna2.innerHTML = woord[5];
+btna3.innerHTML = woord[2];
+btnb1.innerHTML = woord[3];
+btnb3.innerHTML = woord[7];
+btnc1.innerHTML = woord[6];
+btnc2.innerHTML = woord[1];
+btnc3.innerHTML = woord[4];
 
-//functie om het antwoord te kopieren. (event propagation)
+//combinatie op basis van start b1. B1,c3, a2,c1,b3,a1,c2
+/*btna1.innerHTML = woord[0];
+btna2.innerHTML = woord[2];
+btna3.innerHTML = woord[2];
+btnb1.innerHTML = woord[0];
+btnb3.innerHTML = woord[3];
+btnc1.innerHTML = woord[6];
+btnc2.innerHTML = woord[1];
+btnc3.innerHTML = woord[1]; */
+
+//maak array voor het antwoord. 
+//functie om het antwoord te kopieren. die komma's moeten weg uit de array als je m print
+
+//haal de komma uit de array
 let antwoord = document.querySelector('h1');
+
+let oplossing = [" ", " ", " ", " ", " "," "," "," " ];
 
 document.addEventListener('click', (e) => {
     let element = e.target;
     if(element.tagName == "BUTTON"){
-        console.log(`${element.id}: ${element.innerText}`);
-        antwoord.innerText = `${element.id}: ${element.innerText}`;
+        console.log(oplossing);
+        oplossing.unshift(`${element.innerText}`);
+        oplossing.pop();
+        antwoord.innerHTML = oplossing;
     }
-    else antwoord.innerHTML = "testing";
+    //als de reset knop word ingedrukt dan print lege string.
+    else antwoord.innerHTML = " ";
 });
 
-//hier een functie om de strings aan elkaar te plakken.
+
 
 //hier een functie om het woord te controleren
+
+
+//if string == woord dan volgende stap.
 
 //hier een functie die feliciteert van goed zo en dan klinkt naar de volgende puzzel
 
