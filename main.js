@@ -45,7 +45,7 @@ btnc3.innerHTML = woord[1]; */
 //maak array voor het antwoord. 
 //functie om het antwoord te kopieren. die komma's moeten weg uit de array als je m print
 
-//haal de komma uit de array
+//haal de komma uit de array, doe het tegenovergestelde van unshift, want nu schrijft ie m in spiegelbeeld. omdat de letter in de eerse vd array word gezet, moet in de laatste
 let antwoord = document.querySelector('h1');
 
 let oplossing = [" ", " ", " ", " ", " "," "," "," " ];
