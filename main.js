@@ -43,9 +43,6 @@ btnc2.innerHTML = woord[1];
 btnc3.innerHTML = woord[1]; */
 
 //maak array voor het antwoord. 
-//functie om het antwoord te kopieren. die komma's moeten weg uit de array als je m print
-
-//haal de komma uit de array
 let antwoord = document.querySelector('h1');
 
 let oplossing = [" ", " ", " ", " ", " "," "," "," " ];
@@ -54,12 +51,13 @@ document.addEventListener('click', (e) => {
     let element = e.target;
     if(element.tagName == "BUTTON"){
         console.log(oplossing);
-        oplossing.unshift(`${element.innerText}`);
-        oplossing.pop();
-        antwoord.innerHTML = oplossing;
-    }
+        oplossing.push(`${element.innerText}`);
+        oplossing.shift();
+        antwoord.innerHTML = oplossing.join('');
+        }
     //als de reset knop word ingedrukt dan print lege string.
-    else antwoord.innerHTML = " ";
+    else antwoord.innerHTML = " ",
+    oplossing = [" ", " ", " ", " ", " "," "," "," " ];
 });
 
 
