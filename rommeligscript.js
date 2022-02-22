@@ -140,3 +140,19 @@ document.addEventListener('click', (e) => {
     //als de reset knop word ingedrukt dan print lege string.
     else antwoord.innerHTML = " ";
 });
+
+
+let oplossing = [" ", " ", " ", " ", " "," "," "," " ];
+
+document.addEventListener('click', (e) => {
+    let element = e.target;
+    if(element.tagName == "BUTTON"){
+        console.log(oplossing);
+        oplossing.push(`${element.innerText}`);
+        oplossing.shift();
+        antwoord.innerHTML = oplossing.join('');
+        }
+    //als de reset knop word ingedrukt dan print lege string.
+    else antwoord.innerHTML = " ",
+    oplossing = [" ", " ", " ", " ", " "," "," "," " ];
+});
