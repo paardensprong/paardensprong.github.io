@@ -62,10 +62,14 @@ font-family: 'Pacifico', cursive;
  color:
 }
 
-#antwoord{
-  text-align: center;
+#antwoordContainer{
+  margin-left: 33%; 
+  width: 33%;
   border-style: outset;
+  text-align:center;
 }
+
+/* nog een pop up knop maken voor goed woord en volgende. en iets van een scoreboard bij houden. 
 
 /* color wheel kleuren: rose: #F658A4 geel: #F2F658  groen:  #58F6AA  paars:  #5B58F6
 
