@@ -11,50 +11,43 @@ function shuffleArray(array) {
   shuffleArray(woordenlijst);
   console.log(woordenlijst);
 
-//woordnr variable om het volgende woord te pakken
-let woordnr = 0;
+    //woord variable om het volgende woord te pakken
+    let woord = woordenlijst [0];
+    woord = woord.toLowerCase();
+    //verklaar de buttons als variabelen
+    let btna1 = document.querySelector('#a1'); 
+    let btna2 = document.querySelector('#a2');
+    let btna3 = document.querySelector('#a3');
+    
+    let btnb1 = document.querySelector('#b1');
+    let btnReset = document.querySelector('#b2');
+    let btnb3 = document.querySelector('#b3');
 
-//begin nieuw woord
-let woord = woordenlijst[woordnr];
-woord = woord.toLowerCase();
-let oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
-let btnReset = document.querySelector('#b2');
-let antwoord = document.getElementById("antwoord");
+    let btnc1 = document.querySelector('#c1');
+    let btnc2 = document.querySelector('#c2');
+    let btnc3 = document.querySelector('#c3');
 
-let letterNR = 0;
-function initLetterButton(id, idx) {
-    let btn = document.querySelector("#" + id); 
-    btn.innerHTML = woord[idx]; 
-    btn.onclick = function (evt) { 
-        let element = evt.target;
-        if (letterNR < 8) {
-            oplossing[letterNR++] = element.innerText;
-        } else {
-            let oplossingWoord = oplossing.join("");
-            if (woord == oplossingWoord) {
-                console.warn("Yeah!", oplossingWoord, woord);
-                woordnr++;
-                // UITDAGING: Hoe verder met +1 in een loop
-            }
-        }
-        console.log(woordnr, letterNR, oplossing);
-        antwoord.innerHTML = oplossing.join("");
-    };
-}
-console.log(woordnr);
-//Combinatie op basis van start a1, c2,a3,b1,c3,a2,c1,b3
-initLetterButton("a1", 0);
-initLetterButton("a2", 5);
-initLetterButton("a3", 2);
-initLetterButton("b1", 3);
-initLetterButton("b3", 7);
-initLetterButton("c1", 6);
-initLetterButton("c2", 1);
-initLetterButton("c3", 4);
+    //Vul de buttons met letters op basis van : start a1, c2,a3,b1,c3,a2,c1,b3  toLowerCase ()
+    btna1.innerHTML = woord [0];
+    btna2.innerHTML = woord [5];
+    btna3.innerHTML = woord [2];
 
-document.querySelector('#b2').onclick = (evt) => {
-    //als de reset knop word ingedrukt dan print lege string.
-    oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
-    antwoord.innerHTML = oplossing.join("");
-};
-// eind woord
+    btnb1.innerHTML = woord [3];
+    btnb3.innerHTML = woord [7];
+
+    btnc1.innerHTML = woord [6];
+    btnc2.innerHTML = woord [1];
+    btnc3.innerHTML = woord [4];
+
+    //functie om de woorden in de buttons te vullen, voor a1 b1 en c1. Maar dat mag later.
+
+    //Functie om de letters in het resultaat vakje te printen. 
+
+
+    //aparte functie om het woord te controleren misschien?
+        //verklaar de variabelen
+    resultaat = ["t","e","s","t","i","n","g","!"];
+    oplossing = document.querySelector('oplossing').innerhtml = resultaat;
+    
+    oplossing.innerHTML = resultaat; 
+    console.log(resultaat);
