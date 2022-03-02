@@ -20,47 +20,40 @@ let oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
 let btnReset = document.querySelector('#b2');
 let antwoord = document.getElementById("antwoord");
 
+
 let letterNR = 0;
+
 function initLetterButton(id, idx) {
     let btn = document.querySelector("#" + id); 
     btn.innerHTML = woord[idx]; 
     btn.onclick = function (evt) { 
         let element = evt.target;
-        testBreak: if (letterNR < 8) {
+        if (letterNR < 8) {
             oplossing[letterNR++] = element.innerText;
-            break testBreak;   
+            
         } 
             let oplossingWoord = oplossing.join("");
-            if (woord == oplossingWoord) {
+            if ( letterNR == 8 && woord == oplossingWoord) {
                 console.warn("Yeah!", oplossingWoord, woord);
-                return correct = true              
-                // UITDAGING: Hoe verder met +1 in een loop
+                return correct = true   
             }
         
         console.log(letterNR, oplossing);
         antwoord.innerHTML = oplossing.join("");
     };
 }
+
 console.log(correct);
-do{
-//Combinatie op basis van start a1, c2,a3,b1,c3,a2,c1,b3
-initLetterButton("a1", 0);
-initLetterButton("a2", 5);
-initLetterButton("a3", 2);
-initLetterButton("b1", 3);
-initLetterButton("b3", 7);
-initLetterButton("c1", 6);
-initLetterButton("c2", 1);
-initLetterButton("c3", 4);
-}
-while(correct = false);
+
 //dit is geen
 document.querySelector('#b2').onclick = (evt) => {
+    letterNR = 0;
     //als de reset knop word ingedrukt dan print lege string.
-    oplossing = ["t", "r", "y", "a", "g", "a", "i","n"];
+    oplossing = [" ", " ", " ", " ", " ", " ", " "," "];
     antwoord.innerHTML = oplossing.join("");
 };
-//Op basis van b1, c3, a2, c1, b3, a1, c2, a3for 
+
+//Op basis van b1, c3, a2, c1, b3, a1, c2, a3  
 initLetterButton("a1", 5);
 initLetterButton("a2", 2);
 initLetterButton("a3", 7);
@@ -70,5 +63,18 @@ initLetterButton("c1", 3);
 initLetterButton("c2", 6);
 initLetterButton("c3", 1);
 
+
+do{
+    //Combinatie op basis van start a1, c2,a3,b1,c3,a2,c1,b3
+    initLetterButton("a1", 0);
+    initLetterButton("a2", 5);
+    initLetterButton("a3", 2);
+    initLetterButton("b1", 3);
+    initLetterButton("b3", 7);
+    initLetterButton("c1", 6);
+    initLetterButton("c2", 1);
+    initLetterButton("c3", 4);
+    }
+    while(correct = false && woord != oplossingwoord);
 // eind woord
 
