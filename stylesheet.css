@@ -71,7 +71,17 @@ font-family: 'Pacifico', cursive;
 
 /* nog een pop up knop maken voor goed woord en volgende. en iets van een scoreboard bij houden. */
 #popUpContainer{
-  
+
+}
+/* Score counter maken */
+#score{
+  font-family: 'Pacifico', cursive;
+ width: 200px;
+ height: 100px;
+ border: 3px;
+ font-size: 25px;
+ font-weight: bold;
+ 
 }
 
 
