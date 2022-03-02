@@ -69,8 +69,12 @@ font-family: 'Pacifico', cursive;
   text-align:center;
 }
 
-/* nog een pop up knop maken voor goed woord en volgende. en iets van een scoreboard bij houden. 
+/* nog een pop up knop maken voor goed woord en volgende. en iets van een scoreboard bij houden. */
+#popUpContainer{
+  
+}
 
-/* color wheel kleuren: rose: #F658A4 geel: #F2F658  groen:  #58F6AA  paars:  #5B58F6
+
+/* color wheel kleuren: rose: #F658A4 geel: #F2F658  groen:  #58F6AA  paars:  #5B58F6 
 
 
