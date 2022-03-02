@@ -1,5 +1,3 @@
-// bool voor loop
-let correct = false
 //Lijst met woorden.  
 let woordenlijst = [
     "FILMQUIZ", "CYCLISCH", "CYCLISCH", "CHECKBOX", "PYTHISCH", "FILMQUIZ", "SKYBOXJE", "CHOWCHOW", "CRUCIFIX", "MYTHISCH", "CYSTISCH", "GRIZZLYS", "GYMCLUBS", "COPYSHOP", "CYCLISME", "HYMNISCH", "JAZZCLUB", "LYNCHWET", "PLAYBACK", "PYKNISCH", "ZICHZELF", "CYNISCHT", "HIPPIQUE", "CATCHYST", "BITCHYST", "QUIZZERS", "ATYPISCH", "BABYFACE", "HUILBABY", "SHOWBIZZ", "WHIZZKID", "XYLOLIET", "ZIJSCHIP", "ZWEMCLUB", "COPYCARD", "LUNCHBOX", "HOBBYKOK", "WIJKCHEF", "CYCLOPEN", "CYNISCHE", "FYSISCHE", "TYPISCHE", "SKYBOXEN", "CHEQUEJE", "CLIQUEJE", "CRYPTJES", "JAZZYSTE", "CYBORGJE", "CATCHYER", "QUIZZEND", "BITCHYER", "EXQUISER", "EXQUISTE", "ELYSISCH", "APPLIQUE", "BABYMELK", "BABYTIJD", "BOUWTYPE", "CITYBIKE", "CITYTRIP", "COMBOBOX", "COQUILLE", "CYCLAMEN", "CYCLOIDE", "DISKCOPY", "DYSLEXIE", "FLEXWERK", "HEBZUCHT", "HIPPISCH", "HOBBYIST", "JACQUARD", "JOYSTICK", "MYCELIUM", "PSYCHOOT", "PSYCHOSE", "RUGBYBAL", "WIJKHULP", "WYBERTJE", "XYLOFOON", "ZIJLICHT", "BABYHUID", "BABYFLES", "BABYZAAK", "FOTOQUIZ", "HOBBYMES", "LOBBYBAR", "PECHHULP", "WILDTYPE", "BIJBLIJF", "CHIQUERE", "GELYNCHT", "GEZWICHT", "JACQUETS", "LYRISCHE", "GEHOBBYD", "RECYCLET", "SIXPACKS", "CALLBOYS", "CITYBAGS", "WEKSCHUW", "DIZZYSTE", "LOBBYTJE", "CLIMAXJE", "SUFFIXJE", "BUGGYTJE", "WHISKEYS", "SHABBYST", "HICKORYS", "BABYBOOM", "BABYDOLL", "BICONVEX", "BODYMILK", "CHEMISCH", "CHOQUANT", "CLAQUEUR", "CUPMATCH", "DAVYLAMP", "EXEQUIEN", "FLEXIBEL", "GIFSCHIP", "GLYCEROL", "GLYPTIEK", "HALFVIJF", "IJSLOLLY", "JAZZCAFE", "JAZZROCK", "KOPSCHUW", "KWIKZALF", "LOBBYING", "LOBBYIST", "LYMFEVAT", "MYSTICUS", "POLYFORM", "POLYMORF", "RECYCLEN", "SCHIJFJE", "SCHUBBIG", "SYMBOLUM", "SYNTAXIS", "TYPEWERK", "VITZUCHT", "WIJNPIJP", "WINZUCHT", "ZELFHULP", "ZORGTYPE", "ZUIGPIJP", "ZWACHTEL", "ZEIKWIJF", "ACCUPACK", "BABYBOEK", "LACHKICK", "POWERBOX", "CLUBSHOW", "WIJNCLUB", "ROCKJAZZ", "BEZWIJKT", "BEZWIJMD", "BEZWIJMT", "BIJLICHT", "CELTYPES", "CHOQUEER", "COMPLEXE", "MAXWELLS", "VERZWIJG", "WEGBLIJF", "WEGWIJZE", "WELWIJZE", "ZWICHTTE", "BACKPACK", "GELOBBYD", "LIFTBOYS", "COCKNEYS", "BOMCHECK", "CYRILLES", "GWYNETHS", "JACUZZIS", "BABYTJES", "VAKJURYS", "PLAQUEJE", "HAPPYSTE", "QUILTJES", "WEGTYPES", "SHABBYER", "CHICKJES", "TRICKYST", "CALYPSOS", "LYNXOGEN", "FLASHYST", "CRAZYSTE", "AQUADUCT",
@@ -8,63 +6,23 @@ let woordenlijst = [
 //shuffle the array
 function shuffleArray(array) {
     array.sort(() => Math.random() - 0.5);
-  }
-  
-  shuffleArray(woordenlijst);
-  console.log(woordenlijst);
-
-//begin nieuw woord
-let woord = woordenlijst[0];
-woord = woord.toLowerCase();
-let oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
-let btnReset = document.querySelector('#b2');
-let antwoord = document.getElementById("antwoord");
-
-
-let letterNR = 0;
-
-function initLetterButton(id, idx) {
-    let btn = document.querySelector("#" + id); 
-    btn.innerHTML = woord[idx]; 
-    btn.onclick = function (evt) { 
-        let element = evt.target;
-        if (letterNR < 8) {
-            oplossing[letterNR++] = element.innerText;
-            
-        } 
-            let oplossingWoord = oplossing.join("");
-            if ( letterNR == 8 && woord == oplossingWoord) {
-                console.warn("Yeah!", oplossingWoord, woord);
-                return correct = true   
-            }
-        
-        console.log(letterNR, oplossing);
-        antwoord.innerHTML = oplossing.join("");
-    };
 }
 
-console.log(correct);
+//shuffleArray(woordenlijst);
+console.log(woordenlijst);
 
-//dit is geen
-document.querySelector('#b2').onclick = (evt) => {
-    letterNR = 0;
-    //als de reset knop word ingedrukt dan print lege string.
-    oplossing = [" ", " ", " ", " ", " ", " ", " "," "];
-    antwoord.innerHTML = oplossing.join("");
-};
-
-//Op basis van b1, c3, a2, c1, b3, a1, c2, a3  
-initLetterButton("a1", 5);
-initLetterButton("a2", 2);
-initLetterButton("a3", 7);
-initLetterButton("b1", 0);
-initLetterButton("b3", 4);
-initLetterButton("c1", 3);
-initLetterButton("c2", 6);
-initLetterButton("c3", 1);
+let woordnr = 0;
+let woord;
 
 
-do{
+
+//begin nieuw woord
+function nieuwWoord() {
+    woord = woordenlijst[woordnr];
+    woord = woord.toLowerCase();
+    console.error(woord);
+    woordnr++;
+
     //Combinatie op basis van start a1, c2,a3,b1,c3,a2,c1,b3
     initLetterButton("a1", 0);
     initLetterButton("a2", 5);
@@ -74,7 +32,54 @@ do{
     initLetterButton("c1", 6);
     initLetterButton("c2", 1);
     initLetterButton("c3", 4);
-    }
-    while(correct = false && woord != oplossingwoord);
-// eind woord
+
+    return woord;
+}
+let oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
+let btnReset = document.querySelector('#b2');
+let antwoord = document.getElementById("antwoord");
+
+nieuwWoord();
+
+let letterNR = 0;
+
+function initLetterButton(id, idx) {
+    let btn = document.querySelector("#" + id);
+    btn.innerHTML = woord[idx];
+    btn.onclick = function (evt) {
+        let element = evt.target;
+        if (letterNR < 8) {
+            oplossing[letterNR++] = element.innerText;
+        }
+        let oplossingWoord = oplossing.join("");
+        console.warn(letterNR, oplossingWoord, woord);
+        if (letterNR == 8 && woord == oplossingWoord) {
+            console.warn("Yeah!", oplossingWoord, woord);
+            nieuwWoord();
+        }
+
+        console.log(letterNR, oplossing);
+        antwoord.innerHTML = oplossing.join("");
+    };
+}
+
+//dit is geen
+document.querySelector('#b2').onclick = (evt) => {
+    letterNR = 0;
+    //als de reset knop word ingedrukt dan print lege string.
+    oplossing = [" ", " ", " ", " ", " ", " ", " ", " "];
+    antwoord.innerHTML = oplossing.join("");
+};
+
+//Op basis van b1, c3, a2, c1, b3, a1, c2, a3
+// initLetterButton("a1", 5);
+// initLetterButton("a2", 2);
+// initLetterButton("a3", 7);
+// initLetterButton("b1", 0);
+// initLetterButton("b3", 4);
+// initLetterButton("c1", 3);
+// initLetterButton("c2", 6);
+// initLetterButton("c3", 1);
+
+
 
